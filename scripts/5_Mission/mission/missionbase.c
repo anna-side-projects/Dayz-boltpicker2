@@ -10,7 +10,7 @@ modded class MissionBase
 		super.OnInit();
 		boltInput = "UAGrabBolt";
 		itemClass="BlobBolt";
-		modname = "BoltPicker2";
+		modname = "UnderbarrelCigarette";
 		inputBindings = new CF_InputBindings(this);
 		inputBindings.Bind("checkBoltInput", boltInput, true);
 		GetRPCManager().AddRPC(modname, "spawnBoltRPC",this, SingleplayerExecutionType.Both);
@@ -29,18 +29,28 @@ modded class MissionBase
 		Param1<string> data;
 		
 		if(!ctx.Read(data)) return;
+		PlayerBase player;
+		BlobBolt bolt;
 		if(type == CallType.Server)
 		{
-            PlayerBase player = PlayerBase.Cast(sender.GetPlayer());
-            if(player.GetHumanInventory().GetEntityInHands() == null)
-			    PlayerBase.Cast(sender.GetPlayer()).GetHumanInventory().CreateInHands(itemClass);
+			Print("Player  =  " + sender.GetPlayer());
+            player = PlayerBase.Cast(sender.GetPlayer());
+			if(!player)
+				player = GetGame().GetPlayer();
+            if(player.GetHumanInventory().GetEntityInHands() == null) {
+			    bolt = PlayerBase.Cast(sender.GetPlayer()).GetHumanInventory().CreateInHands(itemClass);
+				bolt.SetPlayer(player);
+				bolt.Init();
+			}
 		}
 		else
 		{
-            PlayerBase player = GetGame().GetPlayer();
-			Print("Bolts called on client not sure how we got here...");
-            if(player.GetHumanInventory().GetEntityInHands() == null)
-			    player.GetHumanInventory().CreateInHands(itemClass);
+            player = GetGame().GetPlayer();
+            if(player.GetHumanInventory().GetEntityInHands() == null) {
+			    bolt = player.GetHumanInventory().CreateInHands(itemClass);
+				bolt.SetPlayer(player);
+				bolt.Init();
+			}
 		}
 	}
 

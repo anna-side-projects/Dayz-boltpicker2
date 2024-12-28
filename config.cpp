@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class BlobBoltPicker2
+	class UnderbarrelCigarette
 	{
 		requiredAddons[] = 
 		{
@@ -12,20 +12,20 @@ class CfgPatches
 
 class CfgMods
 {
-	class BlobBoltPicker2
+	class UnderbarrelCigarette
 	{
 		type = "mod";
-		inputs="BoltPicker2\data\modded_inputs.xml";
+		inputs="UnderbarrelCigarette\data\modded_inputs.xml";
 		dependencies[]={"World", "Mission"}; 
 		class defs
 		{
             class worldScriptModule
             {
-                files[] = {".../scripts/4_World"}
+                files[] = {"UnderbarrelCigarette/scripts/4_World"};
             };
 			class missionScriptModule
 			{
-				files[] = {".../scripts/5_Mission"};
+				files[] = {"UnderbarrelCigarette/scripts/5_Mission"};
 			};
 		};
 	};
@@ -33,17 +33,17 @@ class CfgMods
 
 class CfgVehicles
 {
-	class ItemBase;
-	class BlobBolt: ItemBase
+	class Cassette;
+	class BlobBolt: Cassette
 	{
 		scope=1;
 		displayName="Bolt";
 		descriptionShort="A rusty old bolt.";
-		model="BoltPicker2\data\economy\bolt.p3d";
-		
+		model="UnderbarrelCigarette\data\blobbolt.p3d";
+		hiddenSelectionsTextures[] = {"UnderbarrelCigarette\data\blobbolt\blobbolt_co.paa"};
 		debug_ItemCategory=2;
 		rotationFlags=17;
-		weight=10;
+		weight=100;
 		absorbency=0.5;
 		itemSize[]={1,1};
 		canBeSplit=1;
@@ -51,6 +51,7 @@ class CfgVehicles
 		varQuantityMin=0;
 		varQuantityMax=1;
 		varQuantityDestroyOnMin=1;
+		soundImpactType="metal";
 		class DamageSystem
 		{
 			class GlobalHealth
