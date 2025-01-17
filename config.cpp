@@ -5,7 +5,8 @@ class CfgPatches
 		requiredAddons[] = 
 		{
 			"DZ_Data",
-			"JM_CF_Scripts"
+			"JM_CF_Scripts",
+			"NH_Scripts"
 		};
 	};
 };
