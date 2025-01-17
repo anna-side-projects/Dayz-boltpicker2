@@ -1,4 +1,4 @@
-modded class NH_AnomalyTramplin extends NH_AnomalyBlowBase
+modded class NH_AnomalyTramplinTrigger extends NH_AnomalyBlowBase
 {
     override void InitHitTargets()
     {

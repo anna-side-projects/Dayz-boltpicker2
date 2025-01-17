@@ -1,4 +1,4 @@
-modded class NH_AnomalyGravi extends NH_AnomalyBlowBase
+modded class NH_AnomalyGraviTrigger extends NH_AnomalyBlowBase
 {
     override void InitHitTargets()
     {
