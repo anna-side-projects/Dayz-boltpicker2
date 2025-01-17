@@ -7,6 +7,6 @@ modded class NH_AnomalyGravi_VoronkaTrigger extends NH_AnomalyBlowBase
 
     void OnBlobBoltHit(Object obj)
     {
-        obj.DeleteSafe();
+        obj.Delete();
     }
 }

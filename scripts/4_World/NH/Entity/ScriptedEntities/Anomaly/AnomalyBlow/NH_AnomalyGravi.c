@@ -7,6 +7,6 @@ modded class NH_AnomalyGraviTrigger extends NH_AnomalyBlowBase
 
     void OnBlobBoltHit(Object obj)
     {
-        obj.DeleteSafe();
+        obj.Delete();
     }
 }
