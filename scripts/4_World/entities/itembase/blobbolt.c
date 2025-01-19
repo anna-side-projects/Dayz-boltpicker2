@@ -1,4 +1,4 @@
-class BlobBolt extends Inventory_Base
+class BlobBolt extends ItemBase
 {
     protected PlayerBase player;
 
