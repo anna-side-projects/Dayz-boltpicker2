@@ -44,7 +44,7 @@ class CfgVehicles
 		hiddenSelectionsTextures[] = {"UnderbarrelCigarette\data\blobbolt\blobbolt_co.paa"};
 		debug_ItemCategory=2;
 		rotationFlags=17;
-		weight=100;
+		weight=1000;
 		absorbency=0.5;
 		itemSize[]={1,1};
 		canBeSplit=1;
