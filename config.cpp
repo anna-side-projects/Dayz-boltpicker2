@@ -41,7 +41,6 @@ class CfgVehicles
 		displayName="Bolt";
 		descriptionShort="A rusty old bolt.";
 		model="UnderbarrelCigarette\data\blobbolt.p3d";
-		hiddenSelectionsTextures[] = {"UnderbarrelCigarette\data\blobbolt\blobbolt_co.paa"};
 		debug_ItemCategory=2;
 		rotationFlags=17;
 		weight=1000;
