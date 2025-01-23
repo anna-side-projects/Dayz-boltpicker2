@@ -14,7 +14,7 @@ modded class MissionBase
 		inputBindings = new CF_InputBindings(this);
 		inputBindings.Bind("checkBoltInput", boltInput, true);
 		GetRPCManager().AddRPC(modname, "spawnBoltRPC",this, SingleplayerExecutionType.Both);
-		Print("Init done");
+		Print("Underbarrel cigarette Init done");
 	}
 	
 	void checkBoltInput(UAInput uain)
@@ -36,18 +36,18 @@ modded class MissionBase
 			Print("Player  =  " + sender.GetPlayer());
             player = PlayerBase.Cast(sender.GetPlayer());
 			if(!player)
-				player = GetGame().GetPlayer();
+				player = PlayerBase.Cast(GetGame().GetPlayer());
             if(player.GetHumanInventory().GetEntityInHands() == null) {
-			    bolt = PlayerBase.Cast(sender.GetPlayer()).GetHumanInventory().CreateInHands(itemClass);
+			    bolt = BlobBolt.Cast(PlayerBase.Cast(sender.GetPlayer()).GetHumanInventory().CreateInHands(itemClass));
 				bolt.SetPlayer(player);
 				bolt.Init();
 			}
 		}
 		else
 		{
-            player = GetGame().GetPlayer();
+            player = PlayerBase.Cast(GetGame().GetPlayer());
             if(player.GetHumanInventory().GetEntityInHands() == null) {
-			    bolt = player.GetHumanInventory().CreateInHands(itemClass);
+			    bolt = BlobBolt.Cast(player.GetHumanInventory().CreateInHands(itemClass));
 				bolt.SetPlayer(player);
 				bolt.Init();
 			}

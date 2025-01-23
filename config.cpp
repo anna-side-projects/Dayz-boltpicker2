@@ -34,8 +34,8 @@ class CfgMods
 
 class CfgVehicles
 {
-	class Cassette;
-	class BlobBolt: Cassette
+	class Inventory_Base;
+	class BlobBolt: Inventory_Base
 	{
 		scope=1;
 		displayName="Bolt";
